@@ -1,0 +1,69 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1200">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="5">
+            <StackPanel HorizontalAlignment="Center">
+                <Border BorderBrush="Black" BorderThickness="0,0,0,5" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" Width="890">
+                    <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="881">
+                        <TextBox Height="30" Name="txtFilePath" Width="570" FontSize="15" Opacity="1" >
+                            <TextBox.Effect>
+                                <DropShadowEffect/>
+                            </TextBox.Effect>
+
+                        </TextBox>
+                        <Button Content="Загрузить файл" x:Name="btnOpen" Width="122" FontSize="15" Height="30" FontWeight="Bold" Click="btnOpen_Click" Background="#FFA8EFA9" >
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                        <Button Content="Close" FontSize="15" Height="30" FontWeight="Bold" Name="btnClose" Width="75" Margin="110,0,0,0" Background="#FFBB3030" Click="btnClose_Click" >
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                        <Button Content="Краткий вывод" FontSize="15" Height="30" FontWeight="Bold" x:Name="Short_Outp" Width="161" Background="#FF304CBB" Click="Short_OutP_Click" RenderTransformOrigin="0.668,3.585" >
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                        <Button Content="Полный вывод" FontSize="15" Height="30" FontWeight="Bold" x:Name="Full_Outp" Width="172" Background="#FF30BB9E" Click="Full_OutP_Click" RenderTransformOrigin="0.5,0.5" >
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform AngleX="0"/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform>
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                        <Button Content="Проверить обновление" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Height="30" Width="189"  Click="btnCheckUpdate_Click" Background="#FFF58008" RenderTransformOrigin="0.503,-0.554">
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                        <Button Content="Сохранить файл" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"  VerticalAlignment="Top" Height="27" Width="170"  Click="btnSaveFile_Click" RenderTransformOrigin="0.5,0.5">
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect>
+                        </Button>
+                    </WrapPanel>
+                </Border>
+                <Label Name="txtIns" Content="Данные из загруженного файла" FontSize="17" FontWeight="Bold" Margin="15" HorizontalAlignment="Center" />
+                <ScrollViewer Name="scroll" CanContentScroll="True" Height="700" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+                    <DataGrid AutoGenerateColumns="True" IsReadOnly="True" HorizontalAlignment="Center" Name="dtGrid" VerticalAlignment="Center" />
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+
+
+    </Grid>
+</Window>
